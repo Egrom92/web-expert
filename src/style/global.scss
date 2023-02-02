@@ -1,0 +1,107 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    outline: crimson;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+  .root, .App {
+    height: 100%;
+  }
+
+  .container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  ul,
+  li,
+  p,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  body,
+  address,
+  label {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: block;
+  }
+  
+  input,
+  input:hover,
+  input:focus,
+  input:active,
+  button,
+  button:hover,
+  button:focus,
+  button:active,
+  textarea,
+  textarea:hover,
+  textarea:focus,
+  textarea:active,
+  select,
+  select:hover,
+  select:focus,
+  select:active,
+  option,
+  option:hover,
+  option:focus,
+  option:active,
+  div {
+    outline: none;
+  }
+  
+  a {
+    display: inline-block;
+  }
+  
+  a,
+  a:hover,
+  a:active,
+  a:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  svg {
+    width: 100%;
+  }
+  
+  input {
+    border-radius: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter-ExtraLight', sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+  }
