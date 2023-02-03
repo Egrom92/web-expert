@@ -1,0 +1,38 @@
+.TR {
+    display: flex;
+    padding: 20px 0;
+    background-color: transparent;
+    transition: all ease-out .3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba($primary, .1);
+    }
+    
+    &:not(:last-child) {
+        border-bottom: 1px solid $primary;
+    }
+
+    .id {
+    
+    }
+    .name {
+        
+    }
+    .username {
+        
+    }
+    .email {
+        
+    }
+    .action {
+        display: flex;
+
+        &:first-child {
+            margin-left: auto;
+        }
+        >:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+}

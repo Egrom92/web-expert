@@ -2,7 +2,7 @@
 
 function Input() {
     return (
-      <input type="text" value='input'/>
+      <input type="text"/>
     );
   }
   

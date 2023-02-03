@@ -1,4 +1,4 @@
-import Row from './Row'
-import Header from './Header'
+import TR from './TR'
+import TH from './TH'
 
-export {Row, Header}
+export {TR, TH}

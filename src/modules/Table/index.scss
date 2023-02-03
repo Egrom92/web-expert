@@ -1,2 +1,33 @@
-@import './components/Header';
-@import './components/Row'
+@import './components/TH';
+@import './components/TR';
+
+
+.table {
+    padding: 50px 0 0;
+
+    span {
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .id {
+        max-width: 100px;
+    }
+    .name {
+        max-width: 350px;
+    }
+    .username {
+        max-width: 250px; 
+    }
+    .email {
+        max-width: 220px; 
+    }
+    .action {
+        max-width: 66px;
+    }
+}

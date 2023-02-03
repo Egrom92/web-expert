@@ -1,0 +1,46 @@
+.btn {
+    border: none;
+    background-color: $primary;
+    border-radius: 2px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+   
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.btn_delete {
+        background-color: $error;
+    }
+
+    &.btn_add {
+        background-color: $add;
+    }
+
+    &.btn_done {
+        background-color: $done;
+    }
+
+    &.btn_edit {
+        background-color: $yellow;
+           
+        svg {
+            width: 17px;
+            height: 17px;
+        }
+    }
+
+    &.btn_search {
+           
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+ 
+}
