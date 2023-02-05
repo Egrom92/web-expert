@@ -10,7 +10,6 @@ function Search() {
         <div className='search'>
             {openInput ? <Input/> : null}
             <Button onClick={() => setopenInput(!openInput)} className='search__button' actionName='search'/>
-            <Button className='search__add' actionName='add'/>
         </div>
     );
   }

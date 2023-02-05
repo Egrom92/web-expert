@@ -1,0 +1,28 @@
+.user-section {
+    padding: 30px 0;
+}
+.user {
+
+}
+.user__name {
+
+}
+.user__data-list {
+    margin-top: 40px;
+}
+.user__data {
+    // display: flex;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+.user__data-label {
+    // display: inline-block;
+    max-width: 130px;
+}
+.user__data-value {
+    max-width: 190px;
+    // display: inline-block;
+    margin-left: 6px;
+}

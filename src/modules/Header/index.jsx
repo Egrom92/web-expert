@@ -1,12 +1,13 @@
-import { Search } from "./components"
-import { Button } from '../../ui'
 
-function Header() {
+
+function Header(props) {
+    const { children } = props
     return (
-        <header>
+        <header className='header-section'>
             <div className="container">
-                <Search />
-                <Button />
+                <div className="header">
+                    {children}
+                </div>
             </div>
         </header>
     )

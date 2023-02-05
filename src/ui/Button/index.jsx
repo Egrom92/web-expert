@@ -5,7 +5,8 @@ const actionData = {
   'add': IcoAdd,
   'done': IcoDone,
   'edit': IcoPen,
-  'search': IcoSearch
+  'search': IcoSearch,
+  
 }
 
 function Button(props) {

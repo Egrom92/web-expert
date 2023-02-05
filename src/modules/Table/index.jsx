@@ -10,7 +10,7 @@ function Table() {
             <div className="container">
                 <TH />
                 {loading && <Scelet count={10}/>}
-                {users.map(user => <TR key={user.id} user={user} />)}
+                {!loading && users.map(user => <TR key={user.id} user={user} />)}
             </div>
         </section>
     )

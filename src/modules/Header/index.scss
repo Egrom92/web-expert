@@ -1,6 +1,13 @@
-@import './components/Search';
-
-
-header {
+.header-section {
     padding: 50px 0 20px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    justify-content: flex-end;
+        
+    >:not(:last-child) {
+        margin-right: 5px;
+    }
 }
