@@ -40,5 +40,18 @@ export default class HttpClient {
       return await response.json();
     }
 
+    async patch(url, data = {}) {
+      const address = this.getAddress(url);
+  
+      const response = await fetch(address, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      console.log('response', response);
+      return await response.json();
+    }
   }
   

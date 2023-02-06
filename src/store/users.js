@@ -68,3 +68,13 @@ export const remove = (id) => async (dispatch) => {
 
   dispatch(setState({ loading: false }));
 };
+
+export const setUserNewData = (data) => (dispatch, getState) => {
+  const { user } = getState().users;
+  console.log('user', user);
+  console.log('data', data);
+  dispatch(setState({ user: {...user, ...data} }));
+};
+
+
+

@@ -1,7 +1,5 @@
 import HttpClient from "./HttpClient";
 
-const LIMIT = 5;
-
 const hc = new HttpClient({
   protocol: "https",
   host: "jsonplaceholder.typicode.com",

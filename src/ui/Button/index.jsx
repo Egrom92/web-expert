@@ -1,4 +1,4 @@
-import {IcoDelete, IcoDone, IcoPen, IcoSearch, IcoAdd} from '../../svg'
+import {IcoDelete, IcoDone, IcoPen, IcoSearch, IcoAdd, IcoSave} from '../../svg'
 
 const actionData = {
   'delete': IcoDelete,
@@ -6,7 +6,7 @@ const actionData = {
   'done': IcoDone,
   'edit': IcoPen,
   'search': IcoSearch,
-  
+  'save': IcoSave
 }
 
 function Button(props) {

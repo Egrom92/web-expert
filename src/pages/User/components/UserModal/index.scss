@@ -1,0 +1,70 @@
+.user-modal {
+
+}
+.user-modal__form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+    box-sizing: border-box;
+
+    & > *:not(.user-modal__save):not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+}
+.field-wrap {
+    display: flex;
+    position: relative;
+  
+    label {
+      position: absolute;
+      left: 15px;
+      top: 4px;
+      transition: all ease-out 0.3s;
+      font-size: 15px;
+      pointer-events: none;
+      color: $primary;
+    }
+  
+    input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $primary;
+      box-sizing: border-box;
+      color: $black;
+      padding: 10px 10px 10px 15px;
+  
+  
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        transform: translateY(-17px);
+        font-size: 12px;
+        color: $primary;
+      }
+    }
+  
+    .error {
+      position: absolute;
+      right: 0;
+      color: $error;
+      font-size: 12px;
+      bottom: -16px;
+    }
+  
+    &.phoneInput > input {
+      &:focus ~ .startHelp,
+      &:not(:placeholder-shown) ~ .startHelp {
+        display: block;
+      }
+    }
+  }
+  .user-modal__save {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
