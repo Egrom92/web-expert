@@ -40,6 +40,19 @@ export default class HttpClient {
       return await response.json();
     }
 
+    async post(url, data = {}, query = {}) {
+      const address = this.getAddress(url, query);
+      const response = await fetch(address, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+  
+      return await response.json();
+    }
+
     async patch(url, data = {}) {
       const address = this.getAddress(url);
   
@@ -50,7 +63,14 @@ export default class HttpClient {
         },
         body: JSON.stringify(data)
       });
-      console.log('response', response);
+      return await response.json();
+    }
+    
+    async delete(url) {
+      const address = this.getAddress(url);
+      const response = await fetch(address, {
+        method: "DELETE"
+      });
       return await response.json();
     }
   }

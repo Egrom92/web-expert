@@ -4,17 +4,19 @@ import Template from './Template'
 import { Button } from '../../../../ui'
 
 function TR(props) {
-    const { className, user, editUser } = props
+    const { className, user, editUser, deleteUser } = props
 
     const CN = `TR${className ? ' ' + className : ''}`
 
-    const handleClick = (e) => {
+    const handleEditUser = (e) => {
         e.preventDefault();
         editUser()
-        console.log('handleClick');
-        // add code here to run the functions for edit and delete buttons
     };
 
+    const handleDeeteUser = (e) => {
+        e.preventDefault();
+        deleteUser()
+    }
 
     return (
         <NavLink
@@ -25,8 +27,8 @@ function TR(props) {
             <span className='action'>
                 {user ?
                     <>
-                        <Button onClick={e => handleClick(e)} className='TR__edit' actionName='edit' />
-                        <Button className='TR__delete' actionName='delete' />
+                        <Button onClick={e => handleEditUser(e)} className='TR__edit' actionName='edit' />
+                        <Button onClick={e => handleDeeteUser(e)} className='TR__delete' actionName='delete' />
                     </> :
                     null
                 }

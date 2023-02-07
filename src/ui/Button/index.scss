@@ -8,7 +8,12 @@
     align-items: center;
     justify-content: center;
     padding: 0;
+    cursor: pointer;
    
+    &:hover {
+        opacity: .6;
+    }
+
     svg {
         width: 20px;
         height: 20px;

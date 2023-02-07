@@ -1,7 +1,9 @@
 import { Field } from "formik";
+import { capitalizeFirstLetter } from "../../helpers";
+import _ from 'lodash'
 
 const Input = (props) => {
-  const { name, className, onBlur, values, touched, errors } = props
+  const { name, className, onBlur, values, touched, errors, label } = props
   const CN = `field-wrap ${className ? className : ''}`
 
   return (
@@ -9,12 +11,13 @@ const Input = (props) => {
       <Field
         name={name}
         onBlur={(e) => onBlur(e)}
-        value={values[name] || ''}
+        value={_.get(values, name, '')}
+        placeholder=' '
       />
       {touched[name] && errors[name] && (
         <div className="error">{errors[name]}</div>
       )}
-      <label htmlFor={name}>Username</label>
+      <label htmlFor={name}>{capitalizeFirstLetter(label)}</label>
     </div>
   )
 

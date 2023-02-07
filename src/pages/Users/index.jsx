@@ -1,11 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Table, Header } from '../../modules'
 import { useDispatch } from "react-redux";
 import { loadAll } from "../../store/users";
-import { Search } from "./components"
-import { Button } from '../../ui'
+import { Search, UserAdd } from "./components"
 
 function Users() {
+  const [showModal, setShowModal] = useState(false)
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadAll());
@@ -15,7 +16,7 @@ function Users() {
     <>
       <Header>
         <Search />
-        <Button className='header__add' actionName='add'/>
+        <UserAdd showModal={showModal} setShowModal={setShowModal}/>
       </Header>
       <Table />
     </>

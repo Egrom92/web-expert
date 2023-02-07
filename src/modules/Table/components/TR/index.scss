@@ -4,6 +4,11 @@
     background-color: transparent;
     transition: all ease-out .3s;
     cursor: pointer;
+    color: $black;
+
+    &:visited {
+        color: $black;
+    }
 
     &:hover {
         background-color: rgba($primary, .1);
@@ -23,10 +28,11 @@
         
     }
     .email {
-        
+ 
     }
     .action {
         display: flex;
+        margin-left: auto;
 
         &:first-child {
             margin-left: auto;

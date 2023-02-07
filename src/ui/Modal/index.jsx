@@ -3,14 +3,14 @@ import { useBodyScrollLock } from '../../hooks';
 import {Button} from '../index'
 
 function Modal(props) {
-    const { children, show = false, close = () => null,} = props
-
+    const { children, show = false, close = () => null,className} = props
+    const CN = `modal${className ? ' ' + className : ''}`
     useBodyScrollLock(show)
     
     return (
         show &&
         ReactDOM.createPortal(
-            <div className="modal">
+            <div className={CN}>
                 <div className="modal__backdrop"  onClick={() => close()}/>
                 <div className="modal__wrapper">
                     <div className="modal__header">

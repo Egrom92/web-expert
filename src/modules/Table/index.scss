@@ -16,18 +16,46 @@
     }
 
     .id {
-        max-width: 100px;
+        max-width: 40px;
     }
     .name {
         max-width: 350px;
     }
     .username {
         max-width: 250px; 
+
+        @media (max-width: 550px) {
+            display: none;
+          }
     }
     .email {
         max-width: 220px; 
+
+        @media (max-width: 780px) {
+            display: none;
+          }
     }
     .action {
         max-width: 66px;
     }
+
+}
+
+.table__delete-modal {
+    .modal__wrapper{
+        position: relative;    
+        min-height: 120px;
+    }
+    .modal__content{
+        padding: 20px;   
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+.table__delete-modal-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

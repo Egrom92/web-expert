@@ -1,3 +1,4 @@
 import Search from "./Search";
+import UserAdd from "./UserAdd";
 
-export {Search}
+export {Search, UserAdd}

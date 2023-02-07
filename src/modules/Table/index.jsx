@@ -3,15 +3,31 @@ import { TR, TH } from './components';
 import { useSelector } from "react-redux";
 import Scelet from './components/TR/Scelet';
 import { UserModal } from '../../pages/User';
+import { Button, Modal } from '../../ui';
+import { useDispatch } from "react-redux";
+import { remove, setActiveUser, setUserNewData } from '../../store/users'
 
 function Table() {
-    const { users, loading } = useSelector((state) => state.users);
-    const [showModal, setShowModal] = useState(false)
-    const [activeUser, setActiveUser] = useState(null)
+    const { users, loading, user } = useSelector((state) => state.users);
+    const [showModaEditlUser, setShowModaEditlUser] = useState(false)
+    const [showModaDeletelUser, setShowModaDeletelUser] = useState(false)
 
-    const editUserHandel = (user) => {
-        setActiveUser(user)
-        setShowModal(true)
+    const dispatch = useDispatch()
+
+
+    const handelOpenModaEditUser = (user) => {
+        dispatch(setActiveUser(user))
+        setShowModaEditlUser(true)
+    }
+
+    const handelOpenModaDeletelUser = (user) => {
+        setShowModaDeletelUser(true)
+        dispatch(setActiveUser(user))
+    }
+
+    const handelDeleteUser = (user) => {
+        dispatch(remove(user.id));
+        setShowModaDeletelUser(false)
     }
 
     return (
@@ -20,10 +36,20 @@ function Table() {
                 <div className="container">
                     <TH />
                     {loading && <Scelet count={10} />}
-                    {!loading && users.map(user => <TR editUser={() => editUserHandel(user)} key={user.id} user={user} />)}
+                    {!loading && users.map(user =>
+                        <TR
+                            editUser={() => handelOpenModaEditUser(user)}
+                            deleteUser={() => handelOpenModaDeletelUser(user)}
+                            key={user.id}
+                            user={user}
+                        />)}
                 </div>
             </section>
-            <UserModal user={activeUser} showModal={showModal} setShowModal={setShowModal} />
+            <UserModal onSave={setUserNewData} user={user} showModal={showModaEditlUser} setShowModal={setShowModaEditlUser} />
+            <Modal className='table__delete-modal' show={showModaDeletelUser} close={setShowModaDeletelUser}>
+                <p>Are you sure you want to delete the user?</p>
+                {<Button onClick={() => handelDeleteUser(user)} className='table__delete-modal-button' actionName='done' />}
+            </Modal>
         </>
 
     )
